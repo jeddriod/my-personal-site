@@ -1,2 +1,270 @@
 # my-personal-site
 for job applications
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Binbol Nandar Jedidiah – Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#EDF2F0; --ink:#16282B; --muted:#4F6568; --line:#C5D3D0; --panel:#E0E9E6;
+  --deep:#12343B; --on-deep:#EDF2F0; --accent:#F2B705; --on-accent:#16282B;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F1E21;--ink:#E6EEEC;--muted:#9DB3B1;--line:#26403F;--panel:#16292C;--deep:#0A1517;--on-deep:#E6EEEC}
+}
+:root[data-theme="dark"]{--bg:#0F1E21;--ink:#E6EEEC;--muted:#9DB3B1;--line:#26403F;--panel:#16292C;--deep:#0A1517;--on-deep:#E6EEEC}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.7 "Source Serif 4",Georgia,serif}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+[hidden]{display:none!important}
+nav{display:flex;gap:1.5rem;flex-wrap:wrap;padding:1.25rem 0;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:500;font-size:1rem}
+nav a{text-decoration:none;color:#9DB8B6}
+nav a:hover,nav a[aria-current="page"]{color:var(--on-deep)}
+.hero{background:var(--deep);color:var(--on-deep);padding-bottom:4.5rem;position:relative;overflow:hidden}
+.hero>.wrap{position:relative;z-index:1}
+.chem{position:absolute;right:2%;bottom:0;height:96%;width:auto;opacity:.2;z-index:0;pointer-events:none}
+.net{position:absolute;left:0;bottom:0;width:100%;height:12rem;opacity:.2;z-index:0;pointer-events:none;color:#9DB8B6}
+.hero-grid{display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:center;padding-top:3rem}
+.tile{width:9.5rem;aspect-ratio:1;background:var(--accent);color:var(--on-accent);padding:.7rem .8rem;display:flex;flex-direction:column;justify-content:space-between;border-radius:.4rem;font-family:"Bricolage Grotesque",system-ui,sans-serif;animation:settle .9s cubic-bezier(.2,.8,.2,1) both}
+.tile small{font-size:.75rem;font-weight:700;line-height:1.2}
+.tile b{font-size:4.4rem;font-weight:800;line-height:.9;letter-spacing:-.04em}
+@keyframes settle{from{transform:rotate(-8deg) translateY(-14px);opacity:0}to{transform:none;opacity:1}}
+.hero h1{font-size:clamp(2.6rem,7vw,4.8rem);font-weight:800;letter-spacing:-.03em}
+.hero p{margin:1.25rem 0 0;max-width:36rem;color:#C7D8D6;font-size:1.2rem}
+.subhero{padding-bottom:3rem}
+.subhero h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;letter-spacing:-.03em;margin-top:1.5rem}
+.btns{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:.4rem;font:700 1rem "Bricolage Grotesque",system-ui,sans-serif;text-decoration:none}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.ghost{border:2px solid #4F7A78;color:var(--on-deep)}
+.btn:hover{filter:brightness(1.08)}
+section{padding:4.5rem 0 0}
+section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1.5rem}
+.text{max-width:40rem}
+.text p{margin:0 0 1rem}
+.timeline{list-style:none;margin:0;padding:0;border-left:3px solid var(--line)}
+.timeline li{position:relative;padding:0 0 2.2rem 1.8rem}
+.timeline li::before{content:"";position:absolute;left:-.62rem;top:.5rem;width:.95rem;height:.95rem;background:var(--accent);border:3px solid var(--bg);border-radius:50%}
+.timeline h3{font-size:1.35rem;font-weight:700}
+.timeline .where{color:var(--muted);margin:.2rem 0 .6rem;font-style:italic}
+.timeline p{margin:0;max-width:38rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2rem 2.5rem}
+.skills h3{font-size:1.2rem;font-weight:700;margin-bottom:.5rem;padding-bottom:.4rem;border-bottom:3px solid var(--accent);display:inline-block}
+.skills p{margin:.4rem 0 0;color:var(--muted);font-size:1.05rem;line-height:1.6}
+.focus{border-left:6px solid var(--accent);background:var(--panel);padding:1.5rem 1.6rem;max-width:44rem}
+.focus h3{font-size:1.5rem;font-weight:700;margin-bottom:.6rem}
+.focus p{margin:0 0 .8rem}.focus p:last-child{margin:0}
+.focus + .focus{margin-top:1.5rem}
+.teaser{display:flex;gap:1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--deep);color:var(--on-deep);padding:1.8rem;border-radius:.4rem}
+.teaser p{margin:.5rem 0 0;max-width:34rem;color:#C7D8D6}
+.teaser h2{margin:0;font-size:1.6rem}
+.contact{padding-bottom:5rem}
+.contact p{max-width:34rem;margin:0 0 1.5rem}
+.details{margin:0 0 1.8rem;display:grid;grid-template-columns:max-content 1fr;gap:.5rem 1.5rem}
+.details dt{font:700 1rem "Bricolage Grotesque",system-ui,sans-serif;color:var(--muted)}
+.details dd{margin:0;overflow-wrap:anywhere}
+.contact .btn.ghost{border-color:var(--line);color:var(--ink)}
+footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font-size:.95rem}
+.theme{background:none;border:0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline;padding:0}
+@media (max-width:40rem){
+  .hero-grid{grid-template-columns:1fr;gap:1.8rem}
+  .tile{width:7.5rem}.tile b{font-size:3.3rem}
+  .details{grid-template-columns:1fr;gap:.1rem}.details dd{margin-bottom:.8rem}
+}
+.overlay{position:fixed;inset:0;z-index:50;background:rgba(10,21,23,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);overflow-y:auto;padding:calc(1rem + env(safe-area-inset-top,0px)) 1rem calc(1rem + env(safe-area-inset-bottom,0px))}
+.panel{max-width:62rem;margin:0 auto;background:var(--bg);background:color-mix(in srgb,var(--bg) 92%,transparent);border-radius:.6rem;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35);animation:rise .35s ease both}
+.panel main{padding-bottom:4rem}
+@keyframes rise{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+@media (max-width:40rem){.chem{opacity:.1;right:-12%}}
+@media (prefers-reduced-motion:reduce){.tile,.panel{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div id="view-home">
+  <header class="hero">
+    <svg class="chem" viewBox="0 0 300 400" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><path d="M80 400 L88 168 Q150 140 212 168 L222 400Z" fill="#EDF2F0"/><path d="M150 150 L128 215 L150 400 L172 215Z" fill="#CBDAD7"/><rect x="136" y="128" width="28" height="26" fill="#C98F66"/><circle cx="150" cy="95" r="38" fill="#D9A27A"/><path d="M112 90 Q114 52 150 52 Q186 52 188 90 Q170 70 150 70 Q130 70 112 90Z" fill="#2B2420"/><rect x="114" y="86" width="72" height="22" rx="10" fill="#8FD3F4" fill-opacity=".6" stroke="#12343B" stroke-width="4"/><path d="M100 170 L86 275" stroke="#EDF2F0" stroke-width="30" stroke-linecap="round"/><circle cx="86" cy="288" r="15" fill="#4FA3D1"/><path d="M200 170 L252 222" stroke="#EDF2F0" stroke-width="30" stroke-linecap="round"/><rect x="245" y="160" width="20" height="74" fill="#CBDAD7" fill-opacity=".6" stroke="#9DB8B6" stroke-width="3"/><rect x="242" y="156" width="26" height="7" rx="2" fill="#9DB8B6"/><path d="M245 232 L222 300 Q218 315 235 315 L275 315 Q292 315 288 300 L265 232Z" fill="#CBDAD7" fill-opacity=".5" stroke="#9DB8B6" stroke-width="3"/><path d="M229 285 L222 300 Q218 315 235 315 L275 315 Q292 315 288 300 L281 285Z" fill="#7BE0A0"/><circle cx="245" cy="272" r="4" fill="#7BE0A0"/><circle cx="262" cy="262" r="3" fill="#7BE0A0"/><circle cx="255" cy="248" r="2.5" fill="#7BE0A0"/><circle cx="255" cy="222" r="15" fill="#4FA3D1"/></svg>
+    <svg class="net" viewBox="0 0 900 160" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><g stroke="currentColor" stroke-width="1.5" fill="none"><path d="M40 120 L150 60 L270 110 L390 40 L510 100 L640 50 L760 110 L870 60"/><path d="M150 60 L210 140 L270 110 M390 40 L450 140 L510 100 M640 50 L700 140 L760 110"/></g><g fill="currentColor"><circle cx="40" cy="120" r="6"/><circle cx="150" cy="60" r="6"/><circle cx="270" cy="110" r="6"/><circle cx="390" cy="40" r="6"/><circle cx="510" cy="100" r="6"/><circle cx="640" cy="50" r="6"/><circle cx="760" cy="110" r="6"/><circle cx="870" cy="60" r="6"/><circle cx="210" cy="140" r="5"/><circle cx="450" cy="140" r="5"/><circle cx="700" cy="140" r="5"/></g><g fill="#F2B705"><path d="M330 90 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5z"/><path d="M590 130 l4 9 9 4 -9 4 -4 9 -4 -9 -9 -4 9 -4z"/><path d="M820 100 l4 9 9 4 -9 4 -4 9 -4 -9 -9 -4 9 -4z"/></g></svg>
+    <div class="wrap">
+      <nav aria-label="Main">
+        <a href="#about" aria-current="page">Home</a><a href="#experience">Experience</a><a href="#ai-skills">AI &amp; remote skills</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="hero-grid">
+        <div class="tile" aria-hidden="true"><small>B.Sc.<br>2024</small><b>Bj</b><small>Industrial Chemistry</small></div>
+        <div>
+          <h1>Binbol Nandar Jedidiah</h1>
+          <p>Data analyst, data scientist, AI power user, and excellent AI evaluator, skilled at prompting and directing AI agents, with hands-on AI red teaming practice. Also experienced in customer service, virtual assistance, and remote operations.</p>
+          <div class="btns">
+            <a class="btn primary" href="#ai-skills">See my AI skills</a>
+            <a class="btn ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="about" class="text">
+      <h2>About me</h2>
+      <p>I am a data analyst, data scientist, and excellent AI evaluator. I have completed several online certifications from places like DeepLearning.AI Academy, Mercor Academy, SkillsNaija, and others, and I have practised AI red teaming techniques. I review AI responses carefully against the instructions, and I write clear explanations for my judgments. I am an AI power user who is very good at prompting and at directing AI agents on multi-step, agentic work.</p>
+      <p>My Industrial Chemistry degree from the University of Jos taught me to follow procedures exactly and check my work twice. Alongside sales and project administration, that, along with my data analysis and data science skills, gives me the focus and clear writing that AI training and evaluation work needs. I am based in Nigeria and ready to work remotely.</p>
+    </section>
+
+    <section>
+      <div class="teaser">
+        <div>
+          <h2>AI &amp; remote skills</h2>
+          <p>AI power use, agentic work, prompting, AI evaluation, red teaming, data analysis, data science, data annotation, customer service, and virtual assistance have their own page.</p>
+        </div>
+        <a class="btn primary" href="#ai-skills">Open skills page</a>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ol class="timeline">
+        <li>
+          <h3>Assistant General Manager / Project Administration</h3>
+          <div class="where">Binona Global Limited · Present</div>
+          <p>Support project planning, administration, and coordination. Do preliminary research and assessments, prepare project plans for management review, organise timelines and resources, and keep stakeholders informed.</p>
+        </li>
+        <li>
+          <h3>Sales Expert</h3>
+          <div class="where">Willeat Food Company · 2024–2026</div>
+          <p>Worked in fast-paced sales at NYSC orientation camps in Plateau and Adamawa States, across 12 weeks over three seasons. Explained products clearly, handled customer objections, and supported the flow of stock between manufacturing and sales locations.</p>
+        </li>
+        <li>
+          <h3>B.Sc. Industrial Chemistry</h3>
+          <div class="where">University of Jos, 2024</div>
+          <p>Practical lab training, process thinking, and structured problem solving.</p>
+        </li>
+        <li>
+          <h3>Secondary Education</h3>
+          <div class="where">Nigerian Military School, Zaria</div>
+          <p>Schooling in a structured, disciplined environment that shaped how I follow instructions, manage my time, and work in a team.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+</div>
+
+<div id="view-skills" class="overlay" role="dialog" aria-modal="true" aria-label="AI and remote-work skills" hidden>
+  <div class="panel">
+  <header class="hero subhero">
+    <div class="wrap">
+      <nav aria-label="Main">
+        <a href="#home" data-close>← Back to home</a><a href="#contact" data-close>Contact</a>
+      </nav>
+      <h1>AI and remote-work skills</h1>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <div class="focus">
+        <h3>Excellent AI evaluator</h3>
+        <p>I check AI responses against the task instructions and judge accuracy, clarity, relevance, and whether the answer did what was asked.</p>
+        <p>I apply the same criteria every time and explain my ratings in clear, short written notes.</p>
+      </div>
+      <div class="focus">
+        <h3>AI red teaming</h3>
+        <p>I have practised red teaming techniques: testing AI systems with tricky, adversarial, or edge-case prompts to find where they give unsafe, inaccurate, or off-instruction answers.</p>
+        <p>I record what I tried, what the model did, and why it matters, so the findings are useful to the team.</p>
+      </div>
+      <div class="focus">
+        <h3>AI power user</h3>
+        <p>I use AI tools every day to get real work done faster: researching, drafting, analysing data, organising information, and checking results before I hand them over.</p>
+        <p>I know how to get the best from different AI tools, and I know when to double-check them.</p>
+      </div>
+      <div class="focus">
+        <h3>Agentic work and prompting</h3>
+        <p>I am very good at prompting and at directing AI agents on multi-step work. I set a clear goal, give the agent the context and limits it needs, break the job into steps, review each output, and correct its course until the result is right.</p>
+        <p>That means I can hand research, data analysis, writing, and admin tasks to AI agents and still deliver work that is accurate and ready to use.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>More AI skills</h2>
+      <div class="skills">
+        <div><h3>AI prompting</h3><p>Very strong at writing, testing, and refining prompts with clear instructions, context, examples, and output formats.</p></div>
+        <div><h3>Agentic AI workflows</h3><p>Directing AI agents through multi-step tasks, reviewing their work, and fixing mistakes along the way.</p></div>
+        <div><h3>Data annotation</h3><p>Labeling and reviewing data carefully and consistently.</p></div>
+        <div><h3>Instruction following</h3><p>Reading guidelines closely and applying the criteria the same way every time.</p></div>
+        <div><h3>Online research</h3><p>Finding, comparing, and organising information to complete tasks.</p></div>
+        <div><h3>Data analysis and data science</h3><p>Analysing data, spotting patterns, and turning findings into clear conclusions.</p></div>
+        <div><h3>Online certifications</h3><p>Completed several online certifications from places like DeepLearning.AI Academy, Mercor Academy, SkillsNaija, and others.</p></div>
+        <div><h3>Search and content evaluation</h3><p>Judging whether results and written content are relevant, accurate, and clear.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Remote-work skills</h2>
+      <div class="skills">
+        <div><h3>Customer service</h3><p>Answering customer enquiries, handling objections, and adapting to different needs with clear, professional communication.</p></div>
+        <div><h3>Virtual assistance</h3><p>Administrative support, email and task organisation, and prioritising work so nothing slips.</p></div>
+        <div><h3>Remote task management</h3><p>Time management, working independently, and meeting deadlines.</p></div>
+        <div><h3>Digital tools</h3><p>AI power user, familiar with all the major AI tools. Dashboarding tools, visualisation tools, and data analysis tools. Microsoft Word, Excel, and Google Docs.</p></div>
+        <div><h3>Training</h3><p>Currently enrolled in many courses on Coursera and DeepLearning.AI, because I keep learning to become the best version of myself.</p></div>
+      </div>
+    </section>
+  </main>
+  </div>
+</div>
+
+<div class="wrap contact" id="contact">
+  <section>
+    <h2>Let’s work together</h2>
+    <p>I am open to remote roles in data analysis, data science, agentic AI work, prompting, AI data annotation, AI response evaluation, red teaming, search and content evaluation, AI training support, customer service, virtual assistant work, and research or operations support.</p>
+    <dl class="details">
+      <dt>Email</dt><dd><a href="mailto:nbinboljedidiah@gmail.com" target="_blank" rel="noopener noreferrer">nbinboljedidiah@gmail.com</a></dd>
+      <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/binbol-jedidiah-92a919298" target="_blank" rel="noopener noreferrer">linkedin.com/in/binbol-jedidiah-92a919298</a></dd>
+      <dt>Phone</dt><dd><a href="tel:+2349059118010">+234 905 911 8010</a> or <a href="tel:+2348174564358">+234 817 456 4358</a></dd>
+    </dl>
+    <a class="btn primary" href="mailto:nbinboljedidiah@gmail.com" target="_blank" rel="noopener noreferrer">Email me</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/binbol-jedidiah-92a919298" target="_blank" rel="noopener noreferrer">View my LinkedIn</a>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">© 2026 Binbol Nandar Jedidiah · <button class="theme" id="themeBtn" type="button">Switch theme</button></div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var home=document.getElementById('view-home'),skills=document.getElementById('view-skills');
+  function route(){
+    var h=(location.hash||'').replace('#','');
+    var onSkills=(h==='ai-skills');
+    skills.hidden=!onSkills;
+    
+    if(onSkills){document.body.style.overflow='hidden';skills.scrollTop=0;return}document.body.style.overflow='';
+    var id=h==='home-experience'?'experience':h;
+    var el=id&&document.getElementById(id);
+    if(el){el.scrollIntoView()}else{window.scrollTo(0,0)}
+  }
+  window.addEventListener('hashchange',route);
+  function openSkills(e){e.preventDefault();skills.hidden=false;skills.scrollTop=0;document.body.style.overflow='hidden';try{history.replaceState(null,'','#ai-skills')}catch(x){}}
+  function closeSkills(){skills.hidden=true;document.body.style.overflow='';try{history.replaceState(null,'','#home')}catch(x){}}
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#ai-skills"]'),function(a){a.addEventListener('click',openSkills)});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-close]'),function(a){a.addEventListener('click',function(e){closeSkills();if(a.getAttribute('href')==='#home'){e.preventDefault();window.scrollTo(0,0)}})});
+  skills.addEventListener('click',function(e){if(e.target===skills)closeSkills()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSkills()});
+  route();
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(root.getAttribute('data-theme')!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme',dark?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>
